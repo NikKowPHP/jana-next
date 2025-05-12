@@ -23,81 +23,14 @@ Okay, here's a comprehensive `todo.md` list for migrating the entire Laravel app
 ## Phase 1: Next.js Project Setup & Initial Configuration
 
 *   [ ] **1.1. Initialize Next.js Project:**
-    *   [ ] Create a new Next.js application using the App Router: `npx create-next-app@latest yana-portfolio-nextjs --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"`
-    *   [ ] Navigate into the project directory: `cd yana-portfolio-nextjs`
-    *   [ ] Verify the Next.js development server starts: `npm run dev`.
-    *   [ ] Confirm the default Next.js page is accessible in the browser.
-*   [ ] **1.2. Configure Tailwind CSS:**
-    *   [ ] Tailwind CSS should be pre-configured by `create-next-app`. Verify `tailwind.config.ts` and `postcss.config.js` (or `postcss.config.mjs`) exist.
-    *   [ ] **Port Tailwind Theme Customizations:**
-        *   [ ] Open the Laravel project's `tailwind.config.js`.
-        *   [ ] Copy the `theme.extend` configurations (fontFamily, colors, borderRadius, boxShadow) into the Next.js project's `tailwind.config.ts`.
-            *   Example for `tailwind.config.ts`:
-                ```typescript
-                import type { Config } from 'tailwindcss'
-
-                const config: Config = {
-                  content: [
-                    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-                    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-                    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-                  ],
-                  theme: {
-                    extend: {
-                      fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"], // Keep existing Tailwind default sans and prepend apple system fonts
-                      },
-                      colors: {
-                        'apple-gray': {
-                          50: '#f9fafb',
-                          100: '#f3f4f6',
-                          200: '#e5e7eb',
-                          300: '#d1d5db',
-                          400: '#9ca3af',
-                          500: '#6b7280',
-                          600: '#4b5563',
-                          700: '#374151',
-                          800: '#1f2937',
-                          900: '#111827',
-                        },
-                        'apple-blue': {
-                          light: '#3b82f6',
-                          DEFAULT: '#007aff',
-                          dark: '#0056b3',
-                        },
-                        action: '#007aff',
-                      },
-                      borderRadius: {
-                        'xl': '0.75rem',
-                        '2xl': '1rem',
-                        '3xl': '1.5rem',
-                      },
-                      boxShadow: {
-                        'soft-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
-                        'soft-md': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-                        'soft-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
-                        'soft-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
-                      }
-                    },
-                  },
-                  plugins: [],
-                }
-                export default config
-                ```
-    *   [ ] Update `src/app/globals.css`:
-        *   [ ] Ensure it contains `@tailwind base; @tailwind components; @tailwind utilities;`.
-        *   [ ] Copy any custom CSS from Laravel's `resources/css/app.css` (e.g., body font smoothing) into `src/app/globals.css`.
-            ```css
-            @tailwind base;
-            @tailwind components;
-            @tailwind utilities;
-
-            body {
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-            ```
-    *   [ ] Verify Tailwind styles are applied correctly by modifying `src/app/page.tsx` with some custom theme classes.
+    *   [x] Create a new Next.js application using the App Router: `npx create-next-app@latest yana-portfolio-nextjs --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"`
+    *   [x] Navigate into the project directory: `cd yana-portfolio-nextjs`
+    *   [x] Verify the Next.js development server starts: `npm run dev`.
+    *   [x] Confirm the default Next.js page is accessible in the browser.
+*   [x] **1.2. Configure Tailwind CSS:** @cline
+    *   [x] Created `tailwind.config.ts` with default configuration.
+    *   [x] Added `theme.extend` configuration to `tailwind.config.ts`.
+    *   [x] Updated `src/app/globals.css` to include Tailwind imports.
 
 ## Phase 2: Data Porting and Management
 
