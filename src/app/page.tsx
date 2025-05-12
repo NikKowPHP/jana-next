@@ -98,7 +98,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Personal Photos Section */}
-        <motion.div id="personal-photos" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="personal-photos" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-2xl font-medium text-slate-800">Moje Zdjęcia</h2>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-4"></div>
@@ -125,7 +125,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Professional Experience Section */}
-        <motion.div id="professional-experience" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="professional-experience" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Doświadczenie zawodowe</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <div className="mb-6">
@@ -142,7 +142,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Skills Section */}
-        <motion.div id="skills" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="skills" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Umiejętności</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <p className="text-slate-600 mb-4">Paznokcie są jak kropka na końcu zdania. Dopełniają całość wyglądu.</p>
@@ -171,7 +171,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Education and Certificates Section */}
-        <motion.div id="education-and-certificates" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="education-and-certificates" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Wykształcenie i Certyfikaty</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -210,7 +210,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Professional Summary Section */}
-        <motion.div id="professional-summary" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="professional-summary" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Podsumowanie zawodowe</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <p className="text-slate-600">
@@ -220,7 +220,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Latest Work Examples Section */}
-        <motion.div id="latest-work-examples" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="latest-work-examples" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Najnowsze Przykłady Prac</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -257,7 +257,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Socials Section */}
-        <motion.div id="socials" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="socials" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Socials</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <ul className="list-disc list-inside text-slate-600">
@@ -270,7 +270,7 @@ export default function LandingPage() {
         
 
         {/* Languages Section */}
-        <motion.div id="languages" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="languages" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Languages</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <ul className="list-disc list-inside text-slate-600">
@@ -281,7 +281,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* Contact Information */}
-        <motion.div id="contact" className="mb-8 mt-16 pt-16" variants={itemVariants}>
+        <motion.div id="contact" className="mb-8 mt-10 pt-10 sm:mt-16 sm:pt-16" variants={itemVariants}>
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Kontakt</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <p className="text-slate-600">Email: <a href="mailto:nik.kow@outlook.com" className="text-rose-500 hover:underline">nik.kow@outlook.com</a></p>
