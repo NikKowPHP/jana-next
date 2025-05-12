@@ -9,10 +9,14 @@ export default function Navbar() {
   const toggleMenu = (sectionLink) => {
     setIsOpen(!isOpen);
     // Scroll to the section smoothly
-    const section = document.getElementById(sectionLink);
+    const section = document.querySelector(sectionLink);
+    // add a timeout to allow the menu to close before scrolling
+    setTimeout(() => {
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth' , block: 'start' });
+      }
     }
+    , 300);
   };
 
   const linkVariants = {
