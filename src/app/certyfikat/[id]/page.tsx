@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from "next/image"
 import Link from "next/link"
 import { getCertificateById  } from "@/lib/certificates"
@@ -5,6 +6,11 @@ import { ArrowLeft, FileText } from "lucide-react"
 import type { Metadata } from "next"
 
 import { certificatesData } from '@/data/certificates';
+
+type Props = {
+  params: Promise<{ id: string }>; // params is now a Promise
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // searchParams also, if used
+};
 
 // Generate static params for all certificate IDs
 export async function generateStaticParams() {
@@ -14,8 +20,9 @@ export async function generateStaticParams() {
 }
 
 // Dynamic metadata based on the certificate
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const certificate = getCertificateById(params.id)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const certificate = getCertificateById(resolvedParams.id)
 
   if (!certificate) {
     return {
@@ -29,8 +36,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   }
 }
 
-export default function CertificatePage({ params }: { params: { id: string } }) {
-  const certificate = getCertificateById(params.id)
+export default async function CertificatePage({ params }: Props): Promise<React.ReactElement> {
+  const resolvedParams = await params;
+  const certificate = getCertificateById(resolvedParams.id)
 
   if (!certificate) {
     return (
