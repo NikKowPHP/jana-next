@@ -16,7 +16,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// Function to generate metadata dynamically
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const certificate = getCertificateById(params.id);
   if (!certificate) {

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: [URL_OF_SITEMAP_ONCE_GENERATED_OR_DEPLOYED]/sitemap.xml

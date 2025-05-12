@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://yourdomain.com'), // Replace with actual domain
   title: {
     default: 'Yana Kavaliova-Logvin - Certyfikaty',
     template: '%s - Yana Kavaliova-Logvin',

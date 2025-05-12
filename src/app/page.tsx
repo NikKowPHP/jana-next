@@ -2,6 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllCertificates } from '@/lib/certificates'; // Adjust path if needed
 import { Certificate } from '@/data/certificates';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Strona Główna', // Will be "Strona Główna - Yana Kavaliova-Logvin"
+  description: 'Przeglądaj certyfikaty Yany Kavaliova-Logvin w dziedzinie manicure i pedicure.',
+};
 
 // Opt-in for static generation
 export const dynamic = 'force-static';
