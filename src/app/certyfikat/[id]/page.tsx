@@ -1,13 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
-import { getCertificateById, getAllCertificateIds } from "@/lib/certificates"
-import { ArrowLeft } from "lucide-react"
+import { getCertificateById  } from "@/lib/certificates"
+import { ArrowLeft, FileText } from "lucide-react"
 import type { Metadata } from "next"
+
+import { certificatesData } from '@/data/certificates';
 
 // Generate static params for all certificate IDs
 export async function generateStaticParams() {
-  const certificateIds = getAllCertificateIds()
-  return certificateIds.map((id) => ({ id }))
+  return certificatesData.map((certificate) => ({
+    id: certificate.id,
+  }));
 }
 
 // Dynamic metadata based on the certificate
@@ -55,40 +58,55 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
           Powrót do strony głównej
         </Link>
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100">
-          <div className="relative h-[40vh] sm:h-[50vh] w-full">
-            <Image
-              src={certificate.image_path || "/placeholder.svg"}
-              alt={certificate.title_pl}
-              fill
-              sizes="100vw"
-              className="object-contain"
-              priority
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Certificate Image */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100">
+            {certificate.original_file_type === "image" ? (
+              <div className="relative h-[60vh] w-full">
+                <Image
+                  src={certificate.original_file_path || "/placeholder.svg"}
+                  alt={certificate.title_pl}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center p-8 h-[60vh]">
+                <FileText className="w-16 h-16 text-slate-400 mb-4" />
+                <p className="text-slate-600">Ten certyfikat jest dostępny jako plik PDF.</p>
+                <a
+                  href={certificate.original_file_path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 px-4 py-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors"
+                >
+                  Otwórz PDF
+                </a>
+              </div>
+            )}
           </div>
 
-          <div className="p-8">
-            <h1 className="text-3xl font-medium text-slate-900 mb-4">{certificate.title_pl}</h1>
+          {/* Certificate Details */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100 p-8">
+            <h1 className="text-3xl font-medium text-slate-900 mb-6">{certificate.title_pl}</h1>
 
             {certificate.description_pl && (
-              <p className="text-slate-600 mb-6 leading-relaxed">{certificate.description_pl}</p>
+              <div className="mb-6">
+                <h2 className="text-lg font-medium text-slate-800 mb-2">Opis</h2>
+                <p className="text-slate-600">{certificate.description_pl}</p>
+              </div>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
-              {certificate.date && (
-                <div>
-                  <h2 className="font-medium text-slate-800 mb-1">Data wydania</h2>
-                  <p className="text-slate-600">{certificate.date}</p>
+            {certificate.translation_pl && (
+              <div>
+                <h2 className="text-lg font-medium text-slate-800 mb-2">Tłumaczenie</h2>
+                <div className="bg-slate-50 rounded-xl p-6 whitespace-pre-line text-slate-600 leading-relaxed">
+                  {certificate.translation_pl}
                 </div>
-              )}
-
-              {certificate.issuer && (
-                <div>
-                  <h2 className="font-medium text-slate-800 mb-1">Wydawca</h2>
-                  <p className="text-slate-600">{certificate.issuer}</p>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
