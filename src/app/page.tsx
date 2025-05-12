@@ -69,6 +69,29 @@ export default function LandingPage() {
             <p className="text-slate-600">Brak dostępnych certyfikatów.</p>
           </div>
         )}
+
+        {/* Personal Photos Section */}
+        <div className="mb-8 mt-16 flex items-center justify-between">
+          <h2 className="text-2xl font-medium text-slate-800">Moje Zdjęcia</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-4"></div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {["/personal_photos/Screenshot_4.png", "/personal_photos/Screenshot_5.png", "/personal_photos/Screenshot_6.png"].map((photoPath) => (
+            <div key={photoPath} className="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 ease-in-out overflow-hidden border border-slate-100">
+              <div className="aspect-[4/3] relative overflow-hidden rounded-t-2xl">
+                <Image
+                  src={photoPath}
+                  alt={`Personal photo`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
