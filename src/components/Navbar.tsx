@@ -61,101 +61,10 @@ export default function Navbar() {
           >
             Instagram (@sns_nail_2)
           </motion.a>
-          <motion.a
-            href="#certificates"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Certyfikaty
-          </motion.a>
-          <motion.a
-            href="#personal-photos"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Moje Zdjęcia
-          </motion.a>
-          <motion.a
-            href="#professional-experience"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Doświadczenie zawodowe
-          </motion.a>
-          <motion.a
-            href="#skills"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Umiejętności
-          </motion.a>
-          <motion.a
-            href="#education-and-certificates"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Wykształcenie i Certyfikaty
-          </motion.a>
-          <motion.a
-            href="#professional-summary"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Podsumowanie zawodowe
-          </motion.a>
-          <motion.a
-            href="#latest-work-examples"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Przykłady Prac
-          </motion.a>
-          <motion.a
-            href="#socials"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Socials
-          </motion.a>
-          <motion.a
-            href="#languages"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Languages
-          </motion.a>
-          <motion.a
-            href="#contact"
-            className="text-slate-600 hover:text-rose-500 transition-colors duration-300"
-            variants={linkVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-          >
-            Kontakt
-          </motion.a>
-          {/* Add more navigation links here in the future */}
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div>
           <motion.button
             onClick={toggleMenu}
             className="text-slate-600 hover:text-rose-500 focus:outline-none"
@@ -179,7 +88,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <motion.div
-        className={`md:hidden ${!isOpen ? 'pointer-events-none' : ''}`}
+        className={`${!isOpen ? 'pointer-events-none' : ''}`}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
