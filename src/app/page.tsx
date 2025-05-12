@@ -38,7 +38,7 @@ export default function LandingPage() {
 
         {/* Certificates Section */}
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-medium text-slate-800">Moje Certyfikaty</h2>
+          <h2 className="text-2xl font-medium text-slate-800">Moje Certyfikaty (z </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-4"></div>
         </div>
 
@@ -131,7 +131,6 @@ export default function LandingPage() {
                   <li>Manicure klasyczny</li>
                   <li>manicure bezcążkowy</li>
                   <li>Design</li>
-                  <li>System Tom Bachik</li>
                   <li>hybryda kolor</li>
                 </ul>
               </div>
@@ -242,13 +241,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Personal Website/Certificates/Work Link */}
-        <div className="mb-8 mt-16">
-          <h2 className="text-2xl font-medium text-slate-800 mb-4">Personalna strona / Certyfikaty / Pracy</h2>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
-            <a href="https://jana-manicure-pedicure.vercel.app" className="text-rose-500 hover:underline" target="_blank" rel="noopener noreferrer">jana-manicure-pedicure.vercel.app</a>
-          </div>
-        </div>
+        
 
         {/* Languages Section */}
         <div className="mb-8 mt-16">
