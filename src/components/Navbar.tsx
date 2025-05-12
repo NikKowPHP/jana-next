@@ -7,6 +7,7 @@ export default function Navbar() {
         <Link href="/" className="text-xl font-medium text-slate-900">
           Yana Kavaliova-Lohvin
         </Link>
+        
         <div className="flex items-center space-x-4">
           <a href="https://www.instagram.com/sns_nail" className="text-slate-600 hover:text-rose-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
             Instagram (@sns_nail)

@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Yana Kavaliova-Lohvin | Strona Główna",
-  description: "Przeglądaj certyfikaty Yany Kavaliova-Logvin w dziedzinie manicure i pedicure.",
+  description: "Przeglądaj certyfikaty Yany Kavaliova-Lohvin w dziedzinie manicure i pedicure.",
 }
 
 // Opt-in for static generation
@@ -31,14 +31,14 @@ export default function LandingPage() {
             Witaj na mojej stronie!
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Nazywam się Yana Kavaliova-Logvin. Poniżej znajdziesz moje certyfikaty potwierdzające kwalifikacje w
+            Nazywam się Yana Kavaliova-Lohvin. Poniżej znajdziesz moje certyfikaty potwierdzające kwalifikacje w
             dziedzinie manicure i pedicure.
           </p>
         </div>
 
         {/* Certificates Section */}
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-medium text-slate-800">Moje Certyfikaty (z </h2>
+          <h2 className="text-2xl font-medium text-slate-800">Moje Certyfikaty (z tlumaczeniem) </h2>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-4"></div>
         </div>
 

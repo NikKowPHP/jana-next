@@ -3,6 +3,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 // Load Inter font with specific subsets
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-gradient-to-b from-slate-50 to-slate-100">
         <Navbar />
         <main className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</main>
+        <Footer />
       </body>
     </html>
   )
