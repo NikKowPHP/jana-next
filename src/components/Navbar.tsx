@@ -185,10 +185,10 @@ export default function Navbar() {
         variants={menuVariants}
         transition={{ duration: 0.3 }}
       >
-        <div className="px-6 pt-2 pb-4 space-y-1 sm:px-3">
+        <div className="px-4 py-3 space-y-2">
           <motion.a
             href="https://www.instagram.com/sns_nail"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             target="_blank"
             onClick={() => toggleMenu('https://www.instagram.com/sns_nail')}
             rel="noopener noreferrer"
@@ -200,7 +200,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="https://www.instagram.com/sns_nail_2"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             target="_blank"
             onClick={() => toggleMenu('https://www.instagram.com/sns_nail_2')}
             rel="noopener noreferrer"
@@ -212,7 +212,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#certificates"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#certificates')}
             whileHover="whileHover"
@@ -222,7 +222,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#personal-photos"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#personal-photos')}
             whileHover="whileHover"
@@ -232,7 +232,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#professional-experience"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#professional-experience')}
             whileHover="whileHover"
@@ -242,7 +242,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#skills"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#skills')}
             whileHover="whileHover"
@@ -252,7 +252,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#education-and-certificates"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#education-and-certificates')}
             whileHover="whileHover"
@@ -262,7 +262,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#professional-summary"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#professional-summary')}
             whileHover="whileHover"
@@ -272,7 +272,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#latest-work-examples"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#latest-work-examples')}
             whileHover="whileHover"
@@ -282,7 +282,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#socials"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#socials')}
             whileHover="whileHover"
@@ -292,7 +292,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#languages"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#languages')}
             whileHover="whileHover"
@@ -302,7 +302,7 @@ export default function Navbar() {
           </motion.a>
           <motion.a
             href="#contact"
-            className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
+            className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md transition-colors duration-300"
             variants={linkVariants}
             onClick={() => toggleMenu('#contact')}
             whileHover="whileHover"
