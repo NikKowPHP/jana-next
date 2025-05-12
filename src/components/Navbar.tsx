@@ -179,7 +179,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <motion.div
-        className="md:hidden"
+        className={`md:hidden ${!isOpen ? 'pointer-events-none' : ''}`}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
