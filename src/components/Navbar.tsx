@@ -6,8 +6,13 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenu = (sectionLink) => {
     setIsOpen(!isOpen);
+    // Scroll to the section smoothly
+    const section = document.getElementById(sectionLink);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const linkVariants = {
@@ -181,7 +186,7 @@ export default function Navbar() {
             href="https://www.instagram.com/sns_nail"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             target="_blank"
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('https://www.instagram.com/sns_nail')}
             rel="noopener noreferrer"
             variants={linkVariants}
             whileHover="whileHover"
@@ -193,7 +198,7 @@ export default function Navbar() {
             href="https://www.instagram.com/sns_nail_2"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             target="_blank"
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('https://www.instagram.com/sns_nail_2')}
             rel="noopener noreferrer"
             variants={linkVariants}
             whileHover="whileHover"
@@ -205,7 +210,7 @@ export default function Navbar() {
             href="#certificates"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#certificates')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -215,7 +220,7 @@ export default function Navbar() {
             href="#personal-photos"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#personal-photos')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -225,7 +230,7 @@ export default function Navbar() {
             href="#professional-experience"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#professional-experience')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -235,7 +240,7 @@ export default function Navbar() {
             href="#skills"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#skills')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -245,7 +250,7 @@ export default function Navbar() {
             href="#education-and-certificates"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#education-and-certificates')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -255,7 +260,7 @@ export default function Navbar() {
             href="#professional-summary"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#professional-summary')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -265,7 +270,7 @@ export default function Navbar() {
             href="#latest-work-examples"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#latest-work-examples')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -275,7 +280,7 @@ export default function Navbar() {
             href="#socials"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#socials')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -285,7 +290,7 @@ export default function Navbar() {
             href="#languages"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#languages')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -295,7 +300,7 @@ export default function Navbar() {
             href="#contact"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
-            onClick={toggleMenu}
+            onClick={() => toggleMenu('#contact')}
             whileHover="whileHover"
             whileTap="whileTap"
           >
