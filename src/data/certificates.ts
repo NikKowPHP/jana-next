@@ -100,7 +100,7 @@ NOVA
 `,
   },
   {
-    id: 'kombinowany-manicure-2015',
+    id: 'kombinowany-manicure-2023',
     title_pl: 'KOMBINOWANY MANICURE',
     description_pl: 'Certyfikat ukończenia kursu.',
     original_file_path: '/certificates/originals/manicure_scan_5.jpg',
