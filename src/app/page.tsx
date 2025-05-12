@@ -1,14 +1,10 @@
+'use client'
+
 import Link from "next/link"
 import Image from "next/image"
 import { getAllCertificates } from "@/lib/certificates"
 import type { Certificate } from "@/data/certificates"
-import type { Metadata } from "next"
 import { motion } from "framer-motion"
-
-export const metadata: Metadata = {
-  title: "Yana Kavaliova-Lohvin | Strona Główna",
-  description: "Przeglądaj certyfikaty Yany Kavaliova-Lohvin w dziedzinie manicure i pedicure.",
-}
 
 // Opt-in for static generation
 export const dynamic = "force-static"

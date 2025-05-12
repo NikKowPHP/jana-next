@@ -15,9 +15,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     template: "%s - Yana Kavaliova-Logvin",
-    default: "Yana Kavaliova-Logvin",
+    default: "Yana Kavaliova-Lohvin | Strona Główna", // Added landing page title
   },
-  description: "Profesjonalne usługi manicure i pedicure - Yana Kavaliova-Logvin",
+  description: "Przeglądaj certyfikaty Yany Kavaliova-Lohvin w dziedzinie manicure i pedicure.", // Added landing page description
 }
 
 export default function RootLayout({
