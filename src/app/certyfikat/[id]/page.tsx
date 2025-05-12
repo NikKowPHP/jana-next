@@ -1,94 +1,97 @@
-import { getAllCertificateIds, getCertificateById } from '@/lib/certificates';
-import { Certificate } from '@/data/certificates';
-import Link from 'next/link';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
+import Image from "next/image"
+import Link from "next/link"
+import { getCertificateById, getAllCertificateIds } from "@/lib/certificates"
+import { ArrowLeft } from "lucide-react"
+import type { Metadata } from "next"
 
-// Opt-in for static generation
-export const dynamic = 'force-static';
-export const dynamicParams = false; // Disallow dynamic params not generated at build time
-
+// Generate static params for all certificate IDs
 export async function generateStaticParams() {
-  const certificates = getAllCertificateIds();
-  return certificates.map((cert) => ({
-    id: cert.id,
-  }));
+  const certificateIds = getAllCertificateIds()
+  return certificateIds.map((id) => ({ id }))
 }
 
+// Dynamic metadata based on the certificate
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const certificate = getCertificateById(params.id);
+  const certificate = getCertificateById(params.id)
+
   if (!certificate) {
     return {
-      title: 'Nie znaleziono certyfikatu'
+      title: "Certyfikat nie znaleziony",
     }
   }
+
   return {
-    title: certificate.title_pl, // Will use template from RootLayout
-    description: certificate.description_pl || `Szczegóły certyfikatu: ${certificate.title_pl}`,
+    title: certificate.title_pl,
+    description: certificate.description_pl || "Szczegóły certyfikatu",
   }
 }
 
-export default function CertificateDetailPage({ params }: { params: { id: string } }) {
-  const certificate: Certificate | undefined = getCertificateById(params.id);
+export default function CertificatePage({ params }: { params: { id: string } }) {
+  const certificate = getCertificateById(params.id)
 
   if (!certificate) {
-    notFound();
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8 max-w-md mx-auto text-center">
+          <h1 className="text-2xl font-medium text-slate-800 mb-4">Certyfikat nie znaleziony</h1>
+          <p className="text-slate-600 mb-6">Przepraszamy, nie mogliśmy znaleźć certyfikatu o podanym ID.</p>
+          <Link
+            href="/"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-rose-500 text-white hover:bg-rose-600 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Powrót do strony głównej
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
-    <div className="container mx-auto px-4 max-w-screen-lg">
-      <div className="mb-10">
-        <Link href="/" className="inline-flex items-center text-apple-blue hover:text-apple-blue-dark transition-colors group text-sm font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 transform transition-transform duration-200 ease-in-out group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+      <div className="mx-auto px-6 max-w-screen-xl py-16">
+        <Link href="/" className="inline-flex items-center text-slate-600 hover:text-rose-500 mb-8 transition-colors">
+          <ArrowLeft className="w-4 h-4 mr-2" />
           Powrót do strony głównej
         </Link>
-      </div>
 
-      <h2 className="text-3xl sm:text-4xl font-bold text-apple-gray-900 mb-4">{certificate.title_pl}</h2>
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100">
+          <div className="relative h-[40vh] sm:h-[50vh] w-full">
+            <Image
+              src={certificate.image_path || "/placeholder.svg"}
+              alt={certificate.title_pl}
+              fill
+              sizes="100vw"
+              className="object-contain"
+              priority
+            />
+          </div>
 
-      {certificate.description_pl && (
-        <p className="text-lg text-apple-gray-600 mb-10">{certificate.description_pl}</p>
-      )}
+          <div className="p-8">
+            <h1 className="text-3xl font-medium text-slate-900 mb-4">{certificate.title_pl}</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-apple-gray-50 p-6 rounded-xl shadow-soft-sm">
-          <h3 className="text-xl font-semibold text-apple-gray-800 mb-4">Oryginalny Dokument</h3>
-          {certificate.original_file_type === 'image' ? (
-            <a href={`/${certificate.original_file_path}`} target="_blank" title="Zobacz oryginalny dokument w pełnym rozmiarze" rel="noopener noreferrer">
-              <div className="relative w-full h-auto aspect-[4/3]"> {/* Adjust aspect ratio as needed or make it dynamic */}
-                <Image
-                  src={`/${certificate.original_file_path}`}
-                  alt={`Oryginał - ${certificate.title_pl}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="rounded-lg shadow-md border border-apple-gray-200 hover:shadow-lg transition-shadow duration-300 object-contain" // object-contain or object-cover
-                />
-              </div>
-            </a>
-          ) : (
-            <a href={`/${certificate.original_file_path}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-apple-blue text-white text-sm font-medium rounded-md hover:bg-apple-blue-dark transition-colors">
-              Zobacz oryginał (PDF)
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          )}
-        </div>
+            {certificate.description_pl && (
+              <p className="text-slate-600 mb-6 leading-relaxed">{certificate.description_pl}</p>
+            )}
 
-        <div className="bg-apple-gray-50 p-6 rounded-xl shadow-soft-sm">
-          <h3 className="text-xl font-semibold text-apple-gray-800 mb-4">Tłumaczenie (PL)</h3>
-          {certificate.translation_pl ? (
-            <div className="prose prose-sm text-apple-gray-700 whitespace-pre-line max-w-none">
-              <p>{certificate.translation_pl}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+              {certificate.date && (
+                <div>
+                  <h2 className="font-medium text-slate-800 mb-1">Data wydania</h2>
+                  <p className="text-slate-600">{certificate.date}</p>
+                </div>
+              )}
+
+              {certificate.issuer && (
+                <div>
+                  <h2 className="font-medium text-slate-800 mb-1">Wydawca</h2>
+                  <p className="text-slate-600">{certificate.issuer}</p>
+                </div>
+              )}
             </div>
-          ) : (
-            <p className="text-apple-gray-500 italic">Brak dostępnego tłumaczenia.</p>
-          )}
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

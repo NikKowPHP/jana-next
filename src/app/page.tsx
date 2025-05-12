@@ -1,56 +1,75 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { getAllCertificates } from '@/lib/certificates'; // Adjust path if needed
-import { Certificate } from '@/data/certificates';
-import type { Metadata } from 'next';
+import Link from "next/link"
+import Image from "next/image"
+import { getAllCertificates } from "@/lib/certificates"
+import type { Certificate } from "@/data/certificates"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Strona Główna', // Will be "Strona Główna - Yana Kavaliova-Logvin"
-  description: 'Przeglądaj certyfikaty Yany Kavaliova-Logvin w dziedzinie manicure i pedicure.',
-};
+  title: "Strona Główna",
+  description: "Przeglądaj certyfikaty Yany Kavaliova-Logvin w dziedzinie manicure i pedicure.",
+}
 
 // Opt-in for static generation
-export const dynamic = 'force-static';
+export const dynamic = "force-static"
 
 export default function LandingPage() {
-  const certificates = getAllCertificates();
+  const certificates = getAllCertificates()
 
   return (
-    <div className="mx-auto px-4 max-w-screen-xl py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl font-semibold text-gray-900 mb-6">Witaj na mojej stronie!</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Nazywam się Yana Kavaliova-Logvin. Poniżej znajdziesz moje certyfikaty potwierdzające kwalifikacje w dziedzinie manicure i pedicure.
-        </p>
-      </div>
-
-      <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center sm:text-left">Moje Certyfikaty</h2>
-
-      {certificates.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {certificates.map((certificate: Certificate) => (
-            <Link key={certificate.id} href={`/certyfikat/${certificate.id}`} className="group block bg-white rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out overflow-hidden">
-              <div className="aspect-w-4 aspect-h-3 relative"> {/* Added relative for Next/Image */}
-                <Image
-                  src={`${certificate.thumbnail_image_path}`}
-                  alt={`Miniatura certyfikatu: ${certificate.title_pl}`}
-                  fill // Use fill for responsive images in a sized container
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors duration-300 truncate">{certificate.title_pl}</h3>
-                {certificate.description_pl && (
-                  <p className="text-gray-500 mt-2 line-clamp-2">{certificate.description_pl}</p>
-                )}
-              </div>
-            </Link>
-          ))}
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+      <div className="mx-auto px-6 max-w-screen-xl py-16">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-medium text-slate-900 mb-6 tracking-tight">
+            Witaj na mojej stronie!
+          </h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Nazywam się Yana Kavaliova-Logvin. Poniżej znajdziesz moje certyfikaty potwierdzające kwalifikacje w
+            dziedzinie manicure i pedicure.
+          </p>
         </div>
-      ) : (
-        <p className="text-gray-600 text-center">Brak dostępnych certyfikatów.</p>
-      )}
+
+        {/* Certificates Section */}
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="text-2xl font-medium text-slate-800">Moje Certyfikaty</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent mx-4"></div>
+        </div>
+
+        {certificates.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certificates.map((certificate: Certificate) => (
+              <Link
+                key={certificate.id}
+                href={`/certyfikat/${certificate.id}`}
+                className="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 ease-in-out overflow-hidden border border-slate-100"
+              >
+                <div className="aspect-[4/3] relative overflow-hidden rounded-t-2xl">
+                  <Image
+                    src={certificate.thumbnail_image_path || "/placeholder.svg"}
+                    alt={`Miniatura certyfikatu: ${certificate.title_pl}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-medium text-slate-800 group-hover:text-rose-500 transition-colors duration-300 truncate">
+                    {certificate.title_pl}
+                  </h3>
+                  {certificate.description_pl && (
+                    <p className="text-slate-500 mt-2 text-sm line-clamp-2">{certificate.description_pl}</p>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8 text-center">
+            <p className="text-slate-600">Brak dostępnych certyfikatów.</p>
+          </div>
+        )}
+      </div>
     </div>
-  );
+  )
 }

@@ -1,46 +1,33 @@
-import type { Metadata } from "next";
-import Header from '@/components/Header' // Import Header
-import Footer from '@/components/Footer' // Import Footer
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type React from "react"
+import "./globals.css"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Load Inter font with specific subsets
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-inter",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://yourdomain.com'), // Replace with actual domain
   title: {
-    default: 'Yana Kavaliova-Logvin - Certyfikaty',
-    template: '%s - Yana Kavaliova-Logvin',
+    template: "%s - Yana Kavaliova-Logvin",
+    default: "Yana Kavaliova-Logvin",
   },
-  description: 'Portfolio certyfikatów Yany Kavaliova-Logvin w dziedzinie manicure i pedicure.',
-};
+  description: "Profesjonalne usługi manicure i pedicure - Yana Kavaliova-Logvin",
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="pl">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-apple-gray-100 text-apple-gray-800 min-h-screen flex flex-col`}
-      >
-        <Header /> {/* Add Header */}
-        <main className="flex-grow container mx-auto mt-8 mb-12 px-4 sm:px-6 lg:px-8">
-          <div className="bg-white shadow-soft-lg rounded-2xl p-6 sm:p-10">
-            {children}
-          </div>
-        </main>
-        <Footer /> {/* Add Footer */}
+    <html lang="pl" className={`${inter.variable}`}>
+      <body className="font-sans antialiased">
+        <main>{children}</main>
       </body>
     </html>
-  );
+  )
 }
