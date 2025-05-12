@@ -20,6 +20,13 @@ export default function LandingPage() {
       <div className="mx-auto px-6 max-w-screen-xl py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
+          <Image
+            src="/personal_photos/Screenshot_4.png"
+            alt="Personal Photo"
+            width={100}
+            height={100}
+            className="mx-auto rounded-full mb-4"
+          />
           <h1 className="text-4xl sm:text-5xl font-medium text-slate-900 mb-6 tracking-tight">
             Witaj na mojej stronie!
           </h1>
