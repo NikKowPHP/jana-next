@@ -73,3 +73,7 @@ body {
 .dark {
   /* Dark mode colors if needed */
 }
+
+html {
+  scroll-behavior: smooth;
+}
