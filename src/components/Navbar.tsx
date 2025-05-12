@@ -181,6 +181,7 @@ export default function Navbar() {
             href="https://www.instagram.com/sns_nail"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             target="_blank"
+            onClick={toggleMenu}
             rel="noopener noreferrer"
             variants={linkVariants}
             whileHover="whileHover"
@@ -192,6 +193,7 @@ export default function Navbar() {
             href="https://www.instagram.com/sns_nail_2"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             target="_blank"
+            onClick={toggleMenu}
             rel="noopener noreferrer"
             variants={linkVariants}
             whileHover="whileHover"
@@ -203,6 +205,7 @@ export default function Navbar() {
             href="#certificates"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -212,6 +215,7 @@ export default function Navbar() {
             href="#personal-photos"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -221,6 +225,7 @@ export default function Navbar() {
             href="#professional-experience"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -230,6 +235,7 @@ export default function Navbar() {
             href="#skills"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -239,6 +245,7 @@ export default function Navbar() {
             href="#education-and-certificates"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -248,6 +255,7 @@ export default function Navbar() {
             href="#professional-summary"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -257,6 +265,7 @@ export default function Navbar() {
             href="#latest-work-examples"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -266,6 +275,7 @@ export default function Navbar() {
             href="#socials"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -275,6 +285,7 @@ export default function Navbar() {
             href="#languages"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
@@ -284,6 +295,7 @@ export default function Navbar() {
             href="#contact"
             className="block text-slate-600 hover:text-rose-500 transition-colors duration-300"
             variants={linkVariants}
+            onClick={toggleMenu}
             whileHover="whileHover"
             whileTap="whileTap"
           >
