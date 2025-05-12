@@ -19,7 +19,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       <div className="mx-auto px-6 max-w-screen-xl py-16">
         {/* Hero Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 pt-10">
           <Image
             src="/personal_photos/Screenshot_4.png"
             alt="Personal Photo"
