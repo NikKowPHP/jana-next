@@ -1,45 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 15, 23, 42;
-  --background-start-rgb: 248, 250, 252;
-  --background-end-rgb: 241, 245, 249;
+  /* Neutral Colors */
+  --neutral-1: #ffffff;
+  --neutral-2: #fafafa;
+  --neutral-3: #f5f5f5;
+  --neutral-4: #f0f0f0;
+  --neutral-5: #d9d9d9;
+  --neutral-6: #bfbfbf;
+  --neutral-7: #8c8c8c;
+  --neutral-8: #595959;
+  --neutral-9: #434343;
+  --neutral-10: #262626;
+  --neutral-11: #1f1f1f;
+  --neutral-12: #141414;
+
+  /* Accent Colors */
+  --accent-1: #e6f7ff;
+  --accent-2: #bae7ff;
+  --accent-3: #91d5ff;
+  --accent-4: #69c0ff;
+  --accent-5: #40a9ff;
+  --accent-6: #1890ff;
+  --accent-7: #096dd9;
+  --accent-8: #0050b3;
+  --accent-9: #003a8c;
+  --accent-10: #002766;
+
+  /* Semantic Colors */
+  --background: var(--neutral-1);
+  --foreground: var(--neutral-12);
+  --primary: var(--accent-6);
+  --secondary: var(--neutral-3);
+  --success: #52c41a;
+  --warning: #faad14;
+  --error: #ff4d4f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Aspect ratio utility for image containers */
-.aspect-w-4 {
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+.text-transparent {
+  -webkit-text-fill-color: transparent;
 }
 
-.aspect-w-4 > * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.aspect-w-4.aspect-h-3 {
-  --tw-aspect-w: 4;
-  --tw-aspect-h: 3;
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* iOS-like focus styles */
-:focus {
-  outline: none;
-}
-
-:focus-visible {
-  outline: 2px solid rgba(219, 39, 119, 0.5);
-  outline-offset: 2px;
+.dark {
+  /* Dark mode colors if needed */
 }

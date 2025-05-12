@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${inter.variable}`}>
       <body className="font-sans antialiased">
-        <main>{children}</main>
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</main>
       </body>
     </html>
   )
