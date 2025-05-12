@@ -92,6 +92,176 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
+
+        {/* Professional Experience Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Doświadczenie zawodowe</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <div className="mb-6">
+              <h3 className="text-lg font-medium text-slate-800">Stylistka Paznokci/Pedicure</h3>
+              <p className="text-slate-600">Maj 2024 - Kwie 2025</p>
+              <p className="text-slate-500">milfey_minsk, Minsk, Belarus</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-slate-800">Stylistka Paznokci/Pedicure</h3>
+              <p className="text-slate-600">Lis 2023 - Maj 2024</p>
+              <p className="text-slate-500">D.E.V.Beauty_studio, Minsk, Belarus</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Umiejętności</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <p className="text-slate-600 mb-4">Paznokcie są jak kropka na końcu zdania. Dopełniają całość wyglądu.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div>
+                <h4 className="text-lg font-medium text-slate-800 mb-2">Manicure</h4>
+                <ul className="list-disc list-inside text-slate-600">
+                  <li>Manicure hybrydowy</li>
+                  <li>Utwardzenie żelem</li>
+                  <li>Manicure klasyczny</li>
+                  <li>manicure bezcążkowy</li>
+                  <li>Design</li>
+                  <li>System Tom Bachik</li>
+                  <li>hybryda kolor</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-slate-800 mb-2">Pedicure</h4>
+                <ul className="list-disc list-inside text-slate-600">
+                  <li>SMART pedicure</li>
+                  <li>Pedi frezarkowy</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-slate-800 mb-2">Specjalistka ds. Manicure i Pedicure</h4>
+                <ul className="list-disc list-inside text-slate-600">
+                  <li>CSS</li>
+                  <li>HTML</li>
+                  <li>JS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Education and Certificates Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Wykształcenie i Certyfikaty</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">KIRSANOVA</h3>
+                <p className="text-slate-600">Atraumatyczny Manicure</p>
+                <p className="text-slate-500">Sty 2025</p>
+                <a href="#" className="text-rose-500 hover:underline">Certyfikat link</a>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">KIRSANOVA</h3>
+                <p className="text-slate-600">Karta Licencyjna SMART Pedicure</p>
+                <p className="text-slate-500">Lut 2024</p>
+                <a href="#" className="text-rose-500 hover:underline">Certyfikat link</a>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">KIRSANOVA</h3>
+                <p className="text-slate-600">Estetyka w Peducure</p>
+                <p className="text-slate-500">Lut 2024</p>
+                <a href="#" className="text-rose-500 hover:underline">Certyfikat link</a>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">KIRSANOVA</h3>
+                <p className="text-slate-600">Aparatowy Manicure + Wzmacnianie Żelem Bez Opilowania</p>
+                <p className="text-slate-500">Lut 2024</p>
+                <a href="#" className="text-rose-500 hover:underline">Certyfikat link</a>
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">KIRSANOVA</h3>
+                <p className="text-slate-600">Kombinowany Manicure</p>
+                <p className="text-slate-500">Paz 2023</p>
+                <a href="#" className="text-rose-500 hover:underline">Certyfikat link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Professional Summary Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Podsumowanie zawodowe</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <p className="text-slate-600">
+              Doświadczona Stylistka Paznokci i Pedicure z ponad 1.5 roku doświadczenia zawodowego, zdobytego w Mińsku. Specjalizuję się w manicure (hybrydowy, klasyczny, utwardzanie żelem) oraz pedicure (frezarkowy, SMART), w tym zaawansowanych technikach zdobień. Posiadam liczne certyfikaty potwierdzające kwalifikacje (m.in. KIRSANOVA). Obecnie mieszkam w Krakowie i poszukuję nowych wyzwań zawodowych. Moje prace dostępne są online (portfolio link/Instagram).
+            </p>
+          </div>
+        </div>
+
+        {/* Latest Work Examples Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Najnowsze Przykłady Prac</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">Efekt Cukru</h3>
+                {/* Add image for Efekt Cukru */}
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">Głęboki Burgund</h3>
+                {/* Add image for Głęboki Burgund */}
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">Klasyczna Czerwień</h3>
+                {/* Add image for Klasyczna Czerwień */}
+              </div>
+              <div>
+                <h3 className="text-lg font-medium text-slate-800 mb-2">Pedicure Pielęgnacyjny</h3>
+                {/* Add image for Pedicure Pielęgnacyjny */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Socials Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Socials</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <ul className="list-disc list-inside text-slate-600">
+              <li>Instagram: <a href="https://www.instagram.com/sns_nail_2" className="text-rose-500 hover:underline" target="_blank" rel="noopener noreferrer">@sns_nail_2</a></li>
+              <li>Instagram: <a href="https://www.instagram.com/sns_nail" className="text-rose-500 hover:underline" target="_blank" rel="noopener noreferrer">@sns_nail</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Personal Website/Certificates/Work Link */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Personalna strona / Certyfikaty / Pracy</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <a href="https://jana-manicure-pedicure.vercel.app" className="text-rose-500 hover:underline" target="_blank" rel="noopener noreferrer">jana-manicure-pedicure.vercel.app</a>
+          </div>
+        </div>
+
+        {/* Languages Section */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Languages</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <ul className="list-disc list-inside text-slate-600">
+              <li>Russian: Native</li>
+              <li>Polish: A2</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="mb-8 mt-16">
+          <h2 className="text-2xl font-medium text-slate-800 mb-4">Kontakt</h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
+            <p className="text-slate-600">Email: <a href="mailto:nik.kow@outlook.com" className="text-rose-500 hover:underline">nik.kow@outlook.com</a></p>
+            <p className="text-slate-600">Phone: +48 506 838 243</p>
+            <p className="text-slate-600">Address: Krakow, Polska</p>
+          </div>
+        </div>
+
+       
       </div>
     </div>
   )
