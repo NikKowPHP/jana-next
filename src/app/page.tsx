@@ -5,7 +5,7 @@ import type { Certificate } from "@/data/certificates"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Strona Główna",
+  title: "Yana Kavaliova-Lohvin | Strona Główna",
   description: "Przeglądaj certyfikaty Yany Kavaliova-Logvin w dziedzinie manicure i pedicure.",
 }
 
