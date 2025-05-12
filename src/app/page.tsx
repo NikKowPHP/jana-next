@@ -142,14 +142,7 @@ export default function LandingPage() {
                   <li>Pedi frezarkowy</li>
                 </ul>
               </div>
-              <div>
-                <h4 className="text-lg font-medium text-slate-800 mb-2">Specjalistka ds. Manicure i Pedicure</h4>
-                <ul className="list-disc list-inside text-slate-600">
-                  <li>CSS</li>
-                  <li>HTML</li>
-                  <li>JS</li>
-                </ul>
-              </div>
+             
             </div>
           </div>
         </div>
