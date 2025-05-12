@@ -53,10 +53,13 @@ export default function CertificatePage({ params }: { params: { id: string } }) 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       <div className="mx-auto px-6 max-w-screen-xl py-16">
+        <div className="pt-[20px] ">
+
         <Link href="/" className="inline-flex items-center text-slate-600 hover:text-rose-500 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Powrót do strony głównej
         </Link>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Certificate Image */}
