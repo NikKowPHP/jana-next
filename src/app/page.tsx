@@ -201,22 +201,32 @@ export default function LandingPage() {
           <h2 className="text-2xl font-medium text-slate-800 mb-4">Najnowsze Przykłady Prac</h2>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div>
-                <h3 className="text-lg font-medium text-slate-800 mb-2">Efekt Cukru</h3>
-                {/* Add image for Efekt Cukru */}
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-slate-800 mb-2">Głęboki Burgund</h3>
-                {/* Add image for Głęboki Burgund */}
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-slate-800 mb-2">Klasyczna Czerwień</h3>
-                {/* Add image for Klasyczna Czerwień */}
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-slate-800 mb-2">Pedicure Pielęgnacyjny</h3>
-                {/* Add image for Pedicure Pielęgnacyjny */}
-              </div>
+              {/* Work Examples */}
+              {[
+                "/work_examples/Screenshot_7.png",
+                "/work_examples/Screenshot_8.png",
+                "/work_examples/Screenshot_9.png",
+                "/work_examples/Screenshot_10.png",
+                "/work_examples/Screenshot_11.png",
+                "/work_examples/Screenshot_12.png",
+                "/work_examples/Screenshot_13.png",
+                "/work_examples/Screenshot_14.png",
+                "/work_examples/Screenshot_15.png",
+                "/work_examples/Screenshot_16.png",
+              ].map((imagePath) => (
+                <div key={imagePath} className="group block bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 ease-in-out overflow-hidden border border-slate-100">
+                  <div className="aspect-[4/3] relative overflow-hidden rounded-t-2xl">
+                    <Image
+                      src={imagePath}
+                      alt={`Work example`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
