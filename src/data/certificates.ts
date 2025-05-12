@@ -18,7 +18,7 @@ export const certificatesData: Certificate[] = [
     thumbnail_image_path: '/certificates/originals/manicure_scan_1.jpg',
     translation_pl: `Certyfikat
 potwierdza, że
-Kovalowa-Łogwin Jana Nikołajewna
+Yana Kavaliova-Lohvin
 pomyślnie ukończyła program teoretyczny i praktyczny kursu
 «ATRAUMATYCZNY MANICURE»
 bez prawa nauczania
@@ -34,8 +34,8 @@ Wykładowca Kirsanowa S.W.
     original_file_type: 'image',
     thumbnail_image_path: '/certificates/originals/manicure_scan_6.jpg',
     translation_pl: `Karta Licencyjna
-IMIĘ I NAZWISKO: Kowalowa-Łogwin Jana Nikołajewna
-Numer licencji: WU - 17057 - 0224-81-7
+IMIĘ I NAZWISKO: Yana Kavaliova-Lohvin
+Numer licencji: BY-17057-0224-81-7
 Niniejsza karta licencyjna jest dokumentem potwierdzającym, że licencjobiorca legalnie uzyskał prawo do korzystania z opatentowanej techniki "SMART pedicure":
 w praktyce prywatnej (bez prawa nauczania i odsprzedaży)
 w technice pedicure dyskami Smart
@@ -47,7 +47,7 @@ Data: 27.02.2024
 `,
   },
   {
-    id: 'smart-pedicure-w-40-min-2014',
+    id: 'smart-pedicure-w-40-min-2024',
     title_pl: 'SMART pedicure w 40 min',
     description_pl: 'Certyfikat ukończenia kursu.',
     original_file_path: '/certificates/originals/manicure_scan_2.jpg',
@@ -55,18 +55,18 @@ Data: 27.02.2024
     thumbnail_image_path: '/certificates/originals/manicure_scan_2.jpg',
     translation_pl: `Certyfikat
 o ukończeniu kursu autorskiego
-Kowaliowa-Łogwin [Imię - Handwritten, likely Yana]
+Yana Kavaliova-Lohvin
 pomyślnie ukończyła program
 SMART pedicure
 w 40 min
 z nadaniem statusu
 SMART MASTER
-24-28.08.2014, [Lokalizacja - Handwritten, likely Yana]
+27-28.02.2024,
 www.smart-pilka.ru
 `,
   },
   {
-    id: 'estetyka-w-pedicure-2014',
+    id: 'estetyka-w-pedicure-2024',
     title_pl: 'ESTETYKA W PEDICURE',
     description_pl: 'Certyfikat ukończenia kursu.',
     original_file_path: '/certificates/originals/manicure_scan_3.jpg',
@@ -74,16 +74,16 @@ www.smart-pilka.ru
     thumbnail_image_path: '/certificates/originals/manicure_scan_3.jpg',
     translation_pl: `Certyfikat
 BEZ PRAWA NAUCZANIA
-KOMU: Kowaliowa - Łogwin Yana
+KOMU: Yana Kavaliova-Lohvin
 O UKOŃCZENIU KURSU AUTORSKIEGO "ESTETYKA W PEDICURE"
-DATA: 24-28.02.2014
+DATA: 27-28.02.2024
 podpis
 KIRSA
 NOVA
 `,
   },
   {
-    id: 'aparatowy-manicure-wzmacnianie-zelem-2013',
+    id: 'aparatowy-manicure-wzmacnianie-zelem-2023',
     title_pl: 'APARATOWY MANICURE + WZMACNIANIE ŻELEM BEZ OPILOWANIA',
     description_pl: 'Certyfikat ukończenia kursu.',
     original_file_path: '/certificates/originals/manicure_scan_4.jpg',
@@ -91,9 +91,9 @@ NOVA
     thumbnail_image_path: '/certificates/originals/manicure_scan_4.jpg',
     translation_pl: `Certyfikat
 BEZ PRAWA NAUCZANIA
-KOMU: Kowaliowa - Łogwin [Imię - Handwritten, likely Yana]
+KOMU: Yana Kavaliova-Lohvin
 O UKOŃCZENIU KURSU AUTORSKIEGO "APARATOWY MANICURE + WZMACNIANIE ŻELEM BEZ OPILOWANIA"
-DATA: 26-27.10.2013
+DATA: 26-27.10.2023
 podpis
 KIRSA
 NOVA
@@ -108,9 +108,9 @@ NOVA
     thumbnail_image_path: '/certificates/originals/manicure_scan_5.jpg',
     translation_pl: `Certyfikat
 BEZ PRAWA NAUCZANIA
-KOMU: Kowaliowa - Łogwin [Imię - Handwritten, likely Yana]
+KOMU: Yana Kavaliova-Lohvin
 O UKOŃczeniu AUTORSKIEGO KURSU PODSTAWOWEGO «KOMBINOWANY MANICURE».
-DATA: 13-14.09.2015
+DATA: 13-14.09.2023
 podpis
 KIRSA
 NOVA
