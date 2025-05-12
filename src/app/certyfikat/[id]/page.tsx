@@ -4,6 +4,7 @@ import Link from "next/link"
 import { getCertificateById  } from "@/lib/certificates"
 import { ArrowLeft, FileText } from "lucide-react"
 import type { Metadata } from "next"
+import { motion } from "framer-motion"
 
 import { certificatesData } from '@/data/certificates';
 
@@ -40,10 +41,31 @@ export default async function CertificatePage({ params }: Props): Promise<React.
   const resolvedParams = await params;
   const certificate = getCertificateById(resolvedParams.id)
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+
   if (!certificate) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center">
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8 max-w-md mx-auto text-center">
+        <motion.div
+          className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-8 max-w-md mx-auto text-center"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <h1 className="text-2xl font-medium text-slate-800 mb-4">Certyfikat nie znaleziony</h1>
           <p className="text-slate-600 mb-6">Przepraszamy, nie mogliśmy znaleźć certyfikatu o podanym ID.</p>
           <Link
@@ -53,25 +75,30 @@ export default async function CertificatePage({ params }: Props): Promise<React.
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
           </Link>
-        </div>
+        </motion.div>
       </div>
     )
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-      <div className="mx-auto px-6 max-w-screen-xl py-16">
-        <div className="pt-[20px] ">
+      <motion.div
+        className="mx-auto px-6 max-w-screen-xl py-16"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div className="pt-[20px] " variants={itemVariants}>
 
         <Link href="/" className="inline-flex items-center text-slate-600 hover:text-rose-500 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Powrót do strony głównej
         </Link>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Certificate Image */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100">
+          <motion.div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100" variants={itemVariants}>
             {certificate.original_file_type === "image" ? (
               <div className="relative h-[60vh] w-full">
                 <Image
@@ -97,10 +124,10 @@ export default async function CertificatePage({ params }: Props): Promise<React.
                 </a>
               </div>
             )}
-          </div>
+          </motion.div>
 
           {/* Certificate Details */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100 p-8">
+          <motion.div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-slate-100 p-8" variants={itemVariants}>
             <h1 className="text-3xl font-medium text-slate-900 mb-6">{certificate.title_pl}</h1>
 
             {certificate.description_pl && (
@@ -118,9 +145,9 @@ export default async function CertificatePage({ params }: Props): Promise<React.
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
