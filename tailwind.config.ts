@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+        handwriting: ['"Dancing Script"', 'cursive'],
       },
       colors: {
         // Neutral Colors (1-12)

@@ -23,7 +23,8 @@ export default function Navbar() {
   return (
     <nav className="bg-white/80 backdrop-blur-sm shadow-sm fixed top-0 left-0 right-0 z-10">
       <div className="mx-auto px-6 max-w-screen-xl py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-medium text-slate-900">
+        <Link href="/" className="text-xl font-handwriting text-gray-700 flex items-center">
+          <img src="/logo.png" alt="Logo" className="h-10 w-10 mr-2 rounded-full"/>
           Yana Kavaliova-Lohvin
         </Link>
 
