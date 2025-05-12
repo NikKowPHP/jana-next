@@ -83,7 +83,7 @@ export default async function CertificatePage({ params }: Props): Promise<React.
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       <motion.div
-        className="mx-auto px-6 max-w-screen-xl py-16"
+        className="mx-auto px-4 sm:px-6 max-w-screen-xl py-10 sm:py-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
